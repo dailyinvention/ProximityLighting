@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Proximity Lighting</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <!-- Strings used for the create fragment -->
+    <string name="create_label">Label</string>
+    <string name="create_start_time">Start Time</string>
+    <string name="create_end_time">End Time</string>
+</resources>
