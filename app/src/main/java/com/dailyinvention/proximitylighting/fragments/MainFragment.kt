@@ -10,14 +10,14 @@ import com.dailyinvention.proximitylighting.model.GetHueGroups
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class ProximityFragment : Fragment() {
+class MainFragment : Fragment() {
 
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first, container, false)
+        return inflater.inflate(R.layout.main_fragment, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

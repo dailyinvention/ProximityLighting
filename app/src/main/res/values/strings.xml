@@ -3,8 +3,12 @@
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
+    <!-- Strings used in the main fragemnt -->
+    <string name="main_text">Main View</string>
     <!-- Strings used for the create fragment -->
     <string name="create_label">Label</string>
     <string name="create_start_time">Start Time</string>
+    <string name="create_start_time_hint">Enter Start Time</string>
     <string name="create_end_time">End Time</string>
+    <string name="create_end_time_hint">Enter End Time</string>
 </resources>

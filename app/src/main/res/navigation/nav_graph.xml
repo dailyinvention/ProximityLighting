@@ -7,8 +7,23 @@
 
     <fragment
         android:id="@+id/ProximityFragment"
-        android:name="com.dailyinvention.proximitylighting.fragments.ProximityFragment"
+        android:name="com.dailyinvention.proximitylighting.fragments.MainFragment"
         android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        tools:layout="@layout/main_fragment">
+
+        <action
+            android:id="@+id/action_Hide_Show_Create"
+            app:destination="@id/CreateFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/CreateFragment"
+        android:name="com.dailyinvention.proximitylighting.fragments.CreateFragment"
+        android:label="@string/create_label"
+        tools:layout="@layout/create_fragment">
+
+        <action
+            android:id="@+id/action_Hide_Show_Create"
+            app:destination="@id/ProximityFragment" />
     </fragment>
 </navigation>

@@ -1,12 +1,13 @@
 package com.dailyinvention.proximitylighting
 
 import android.os.Bundle
-import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import androidx.navigation.fragment.NavHostFragment
 
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class ProximityMainActivity : AppCompatActivity() {
 
@@ -15,9 +16,9 @@ class ProximityMainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
+
         addContextAction.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
+            NavHostFragment.findNavController(nav_host_fragment).navigate(R.id.action_Hide_Show_Create)
         }
     }
 
