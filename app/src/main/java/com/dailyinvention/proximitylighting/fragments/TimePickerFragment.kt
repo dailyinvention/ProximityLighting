@@ -14,7 +14,7 @@ class TimePickerFragment : DialogFragment(), TimePickerDialog.OnTimeSetListener 
         val hour = currentDate.get(Calendar.HOUR_OF_DAY)
         val minute = currentDate.get(Calendar.MINUTE)
 
-        // generate time picker set to the current time
+        // generate time picker set to the current time in fields
         return TimePickerDialog(
             activity,
             android.R.style.Theme_DeviceDefault_Light_Dialog_NoActionBar_MinWidth,
