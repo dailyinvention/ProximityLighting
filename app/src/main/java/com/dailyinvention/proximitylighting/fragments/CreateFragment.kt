@@ -1,21 +1,11 @@
 package com.dailyinvention.proximitylighting.fragments
 
-import android.app.DatePickerDialog
-import android.content.Context
-import android.nfc.Tag
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.DatePicker
-import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.Fragment
 import com.dailyinvention.proximitylighting.R
-import com.dailyinvention.proximitylighting.model.GetHueGroups
-import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentTransaction
 import kotlinx.android.synthetic.main.create_fragment.*
 
 /**
