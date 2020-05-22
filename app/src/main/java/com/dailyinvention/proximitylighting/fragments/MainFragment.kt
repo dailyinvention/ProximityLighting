@@ -1,5 +1,6 @@
 package com.dailyinvention.proximitylighting.fragments
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -22,7 +23,7 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val url = "https://192.168.1.118/api/aolDVxGXIEo5muHK1t-409nM9b8O-mfP114DU9gX/groups"
-        GetHueGroups().execute(url)
+//        val url = "https://192.168.1.118/api/aolDVxGXIEo5muHK1t-409nM9b8O-mfP114DU9gX/groups"
+//        GetHueGroups().execute(url)
     }
 }

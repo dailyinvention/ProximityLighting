@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.dailyinvention.proximitylighting.R
 import kotlinx.android.synthetic.main.create_fragment.*
@@ -12,7 +13,7 @@ import kotlinx.android.synthetic.main.create_fragment.*
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class CreateFragment : Fragment() {
-
+    //var createView: View = View(null, null)
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
@@ -23,24 +24,36 @@ class CreateFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        startTime.setOnFocusChangeListener { v, hasFocus -> onFocus(v, hasFocus) }
-        endTime.setOnFocusChangeListener { v, hasFocus -> onFocus(v, hasFocus) }
+        val viewID: Int? = arguments?.getInt("viewID")
+        val dateString: String? = arguments?.getString("dateString")
+
+        if (viewID !== null && dateString !== null) {
+            updateDateString(viewID, dateString)
+        }
+
+        start_time.setOnFocusChangeListener { v, hasFocus -> onFocus(v, hasFocus) }
+        end_time.setOnFocusChangeListener { v, hasFocus -> onFocus(v, hasFocus) }
     }
 
     fun onFocus(v: View, hasFocus: Boolean) {
         // if field is in focus, generate time picker
         if (hasFocus) {
-            val viewID = resources.getResourceName(v.id)
             val viewText = resources.getText(v.id).toString()
             val timePickerObj = TimePickerFragment()
             val bundleObj = Bundle()
 
             // send viewID key to time picker fragment as an argument
-            bundleObj.putString("viewID", viewID)
+            bundleObj.putInt("viewID", v.id)
             timePickerObj.arguments = bundleObj
 
             timePickerObj.show(parentFragmentManager, viewText)
         }
+    }
+
+    fun updateDateString(viewID: Int, dateString: String) {
+        val view: View? = view
+        val dateField = view?.findViewById<EditText>(viewID)
+        dateField?.setText(dateString)
     }
 
 }
