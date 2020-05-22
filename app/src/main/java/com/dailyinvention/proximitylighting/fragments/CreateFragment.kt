@@ -53,6 +53,7 @@ class CreateFragment : Fragment() {
     fun updateDateString(viewID: Int, dateString: String) {
         val view: View? = view
         val dateField = view?.findViewById<EditText>(viewID)
+        dateField?.hint = null
         dateField?.setText(dateString)
     }
 

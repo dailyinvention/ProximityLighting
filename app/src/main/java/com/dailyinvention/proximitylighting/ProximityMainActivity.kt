@@ -5,6 +5,7 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentTransaction
+import androidx.navigation.NavHostController
 import androidx.navigation.fragment.NavHostFragment
 import com.dailyinvention.proximitylighting.fragments.CreateFragment
 import com.dailyinvention.proximitylighting.fragments.TimePickerFragment
@@ -41,20 +42,17 @@ class ProximityMainActivity : AppCompatActivity(), TimePickerFragment.SetDateVal
     }
 
     override fun onSetDateValues(viewID: Int, dateString: String) {
-
-        val createFragment: CreateFragment? =
-            supportFragmentManager.findFragmentById(R.id.create_fragment) as CreateFragment?
-        // Call a method in the ArticleFragment to update its content
+        // load the navigation fragment
+        val navHostFragment = supportFragmentManager.primaryNavigationFragment as NavHostFragment?
+        // access the create fragment from the navigation fragment
+        val createFragment =
+            navHostFragment?.childFragmentManager?.primaryNavigationFragment as CreateFragment?
 
         if (createFragment != null) {
-            // If article frag is available, we're in two-pane layout...
-
-            // Call a method in the ArticleFragment to update its content
+            // if fragment exists, update the fragment
             createFragment.updateDateString(viewID, dateString)
         } else {
             // If the frag is not available, we're in the one-pane layout and must swap frags...
-
-            // Create fragment and give it an argument for the selected article
             val newFragment = CreateFragment()
             val args = Bundle()
             args.putInt("viewID", viewID)
