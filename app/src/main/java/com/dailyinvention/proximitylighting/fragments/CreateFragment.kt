@@ -8,6 +8,10 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import com.dailyinvention.proximitylighting.R
 import kotlinx.android.synthetic.main.create_fragment.*
+import java.text.DateFormat
+import java.text.SimpleDateFormat
+import java.util.*
+import java.util.logging.SimpleFormatter
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -53,8 +57,14 @@ class CreateFragment : Fragment() {
     fun updateDateString(viewID: Int, dateString: String) {
         val view: View? = view
         val dateField = view?.findViewById<EditText>(viewID)
+        // load the string to a date
+        val formatToDate: DateFormat = SimpleDateFormat("HH:mm")
+        val formattedDate = formatToDate.parse(dateString)
+        // convert the date back to a standard time-formatted string
+        val formatToString: DateFormat = SimpleDateFormat("h:mm a")
+        val formattedString: String = formatToString.format(formattedDate)
         dateField?.hint = null
-        dateField?.setText(dateString)
+        dateField?.setText(formattedString)
     }
 
 }
